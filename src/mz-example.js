@@ -14,3 +14,4 @@ const exec = require("mz/child_process").exec;
 
 exec("node -v")
     .then((stdout) => console.info(stdout));
+
