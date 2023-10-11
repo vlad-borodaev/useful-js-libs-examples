@@ -9,6 +9,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "co": "^4.6.0"
+  },
   "volta": {
     "node": "18.18.1"
   }
