@@ -20,17 +20,28 @@ const options = {
 const git = simpleGit(options);
 
 const run = async () => {
-    const history = await git.log();
-    console.info("git log", history);
+    try {
+        const initRepoResult = await git.init();
+        console.info("git init", initRepoResult);
 
-    const currBranch = await git.branch();
-    console.info("git branch", currBranch);
+        const repoUrl = "git@github.com:vlad-borodaev/useful-js-libs-examples.git"
+        const addOriginResult = await git.addRemote("origin", repoUrl);
+        console.info("git remote add origin ...", addOriginResult);
 
-    const remote = await git.remote("-v");
-    console.info("git remote", remote);
+        const history = await git.log();
+        console.info("git log", history);
 
-    const pushResults = await git.push();
-    console.debug("git push", pushResults);
+        const currBranch = await git.branch();
+        console.info("git branch", currBranch);
+
+        const remote = await git.remote("-v");
+        console.info("git remote", remote);
+
+        const pushResults = await git.push();
+        console.debug("git push", pushResults);
+    } catch (err) {
+        console.error(err);
+    }
 };
 
 run();
