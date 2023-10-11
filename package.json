@@ -11,6 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "co": "^4.6.0",
+    "commander": "^11.0.0",
+    "pathe": "^1.1.1",
     "simple-git": "^3.20.0"
   },
   "volta": {
