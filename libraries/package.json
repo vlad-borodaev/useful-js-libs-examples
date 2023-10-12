@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "async": "^3.2.4",
     "co": "^4.6.0",
     "co-express": "^2.0.0",
     "commander": "^11.0.0",
